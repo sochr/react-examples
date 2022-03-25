@@ -1,8 +1,10 @@
-const Muell = (props) => (
-  <h1>
-    {" "}
-    {props.a} + {props.b} = props.a + props.b{" "}
-  </h1>
-);
+function Add(props) {
+  const total = props.a + props.b;
 
-export default Muell;
+  return (
+    <span>
+      Add {props.a} + {props.b} = {total}
+    </span>
+  );
+}
+export default Add;
