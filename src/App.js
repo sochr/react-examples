@@ -5,8 +5,8 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { LinkContainer } from "react-router-bootstrap";
-
 import Add from "./components/add";
+import Clock from "./components/clock";
 
 import "./App.css";
 
@@ -24,6 +24,9 @@ const App = () => (
         <h2>
           Current Page is{" "}
           <Switch>
+            <Route path="/clock">
+              <Clock date={new Date()} />
+            </Route>
             <Route path="/add">
               <Add a={3} b={5} />
             </Route>
@@ -52,6 +55,9 @@ const App = () => (
             </LinkContainer>
             <LinkContainer to="/add">
               <Button>Add a+b</Button>
+            </LinkContainer>
+            <LinkContainer to="/clock">
+              <Button>Clock</Button>
             </LinkContainer>
           </ButtonToolbar>
         </h2>
